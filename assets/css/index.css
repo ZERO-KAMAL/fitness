@@ -166,6 +166,25 @@ a {
   margin: 1rem 0;
 }
 
+#mainbanner .mainbanner__content .mainbanner__content-top h1 span {
+  position: relative !important;
+  font-weight: 700;
+  z-index: 1;
+}
+
+#mainbanner .mainbanner__content .mainbanner__content-top h1 span::after {
+  position: absolute;
+  content: "";
+  bottom: -40px;
+  left: 0%;
+  background: #bed2ff;
+  -webkit-filter: blur(44px);
+          filter: blur(44px);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 @media screen and (min-width: 767px) {
   #mainbanner .mainbanner__content .mainbanner__content-top h1 {
     font-size: 3.5rem;
