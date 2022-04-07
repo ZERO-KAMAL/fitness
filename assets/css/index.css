@@ -20,7 +20,7 @@ a {
 .btn {
   font-weight: normal;
   letter-spacing: 0.5px;
-  padding: 0.375rem 1.4rem;
+  padding: 0.475rem 1.4rem;
   text-transform: capitalize;
 }
 
@@ -134,6 +134,7 @@ a {
 
 #mainbanner {
   position: relative;
+  z-index: 1;
 }
 
 #mainbanner::after {
@@ -146,7 +147,12 @@ a {
   position: absolute;
   content: "";
   top: 0%;
-  right: 10%;
+  right: 0%;
+  z-index: -1;
+}
+
+#mainbanner .mainbanner__content .mainbanner__content-top {
+  z-index: 999;
 }
 
 #mainbanner .mainbanner__content .mainbanner__content-top span {
@@ -171,54 +177,48 @@ a {
   color: #215ee9;
 }
 
-#mainbanner .mainbanner__content .mainbanner__content-top .searchbox-wrap {
+#mainbanner .mainbanner__content .mainbanner__content-top .input-group {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  margin-top: 8%;
-  margin-left: auto;
-  margin-right: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
 }
 
-#mainbanner .mainbanner__content .mainbanner__content-top .searchbox-wrap input {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  padding: 20px;
-  font-size: 1.1em;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
+#mainbanner .mainbanner__content .mainbanner__content-top .input-group input {
+  border: 1px solid rgba(211, 210, 210, 0.22);
+  border-radius: 50px;
+  padding: 1rem;
+  padding-left: 40px;
+}
+
+#mainbanner .mainbanner__content .mainbanner__content-top .input-group input:focus {
+  outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
-  border: none;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#mainbanner .mainbanner__content .mainbanner__content-top .searchbox-wrap button {
-  padding-right: 10px;
-  background-color: #fff;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  -webkit-box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
-  border: none;
-  cursor: pointer;
-  cursor: hand;
+#mainbanner .mainbanner__content .mainbanner__content-top .input-group .icon {
+  position: absolute;
+  left: 3%;
+  z-index: 999;
+  font-size: 1rem;
 }
 
-#mainbanner .mainbanner__content .mainbanner__content-top .searchbox-wrap button span {
-  margin-left: 50px;
-  padding: 14px 45px;
-  font-size: 0.9em;
-  text-transform: uppercase;
-  font-weight: 300;
-  color: #fff;
-  background-color: #215ee9;
-  border-radius: 20px;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+#mainbanner .mainbanner__content .mainbanner__content-top .input-group .input-group-btn {
+  position: absolute;
+  right: 3%;
+  display: block;
+  z-index: 99999;
+}
+
+#mainbanner .mainbanner__content .mainbanner-counting {
+  margin-top: 2.5rem;
 }
 
 #mainbanner .mainbanner__content .mainbanner-counting .mainbanner-counting__box h1 {
@@ -257,6 +257,12 @@ a {
   }
   #mainbanner::after {
     display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #mainbanner {
+    text-align: center;
   }
 }
 /*# sourceMappingURL=index.css.map */
